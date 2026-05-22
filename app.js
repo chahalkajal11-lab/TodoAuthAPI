@@ -18,6 +18,10 @@ TodoRouter.post("/signup", SignUpController);
 TodoRouter.post("/login", Login);
 const port = process.env.PORT || 4567
 
+app.get("/", (req, res) => {
+  res.send("Auth API is running in this project.....");
+});
+
 app.listen(port,(req,res)=>{
     console.log(`Server run on URL:http://localhost:${port}`)
     dbConnect()
