@@ -19,7 +19,14 @@ TodoRouter.post("/login", Login);
 const port = process.env.PORT || 4567
 
 app.get("/", (req, res) => {
-  res.send("Auth API is running in this project.....");
+  res.send(`
+    Auth API is running 
+
+    Available Endpoints:
+    - GET api/vi/users        → Get all users
+    - GET api/vi/users/:id    → Get single user
+    - GET api/vi/todos        → Get all todos
+  `);
 });
 
 app.listen(port,(req,res)=>{
